@@ -49,6 +49,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pAlgorithms, Part I" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
@@ -79,22 +80,26 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="768" y="223" width="382" height="592" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1595872340206" />
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1596032866156">
+    <state x="713" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1596350060251">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1596032866156" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1596032866156">
+    <state x="713" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1036@0.0.1920.1036" timestamp="1596350060251" />
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1596173014900">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1596032866156" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1596032866155">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1596173014900" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1596173014899">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1596032866155" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1596032866156">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1596173014899" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1596173014898">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1596032866156" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1596173014898" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1596173014900">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1596173014900" />
     <state width="1896" height="324" key="GridCell.Tab.1.bottom" timestamp="1594357783209">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -115,5 +120,9 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="444" y="94" width="1022" height="733" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1596126090094" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1599217675881">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1599217675881" />
   </component>
 </project>
