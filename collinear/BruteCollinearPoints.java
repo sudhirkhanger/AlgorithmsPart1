@@ -8,27 +8,45 @@ import java.util.Arrays;
 public class BruteCollinearPoints {
 
     private int numSegments = 0;
-    private final ArrayList<LineSegment> lineSegments;
+    private final ArrayList<LineSegment> lineSegments = new ArrayList<>();
 
     // finds all line segments containing 4 points
     public BruteCollinearPoints(Point[] points) {
-        // todo throw if points null or repeat points.
         if (points == null) throw new IllegalArgumentException();
 
-        lineSegments = new ArrayList<>();
-        for (int i = 0; i < points.length; i++) {
-            Point p = points[i];
-            Point q = points[i + 1];
-            Point r = points[i + 2];
-            Point s = points[i + 3];
-            double slopePq = p.slopeTo(q);
-            double slopePr = p.slopeTo(r);
-            double slopePs = p.slopeTo(s);
-            if (slopePq == slopePr && slopePq == slopePs) {
-                numSegments++;
-                Point[] sortedArray = new Point[] { p, q, r, s };
-                Arrays.sort(sortedArray, Point::compareTo);
-                lineSegments.add(new LineSegment(sortedArray[0], sortedArray[3]));
+        int pointsLength = points.length;
+        if (pointsLength == 0) return;
+        Arrays.sort(points);
+        for (int i = 0; i < pointsLength - 1; i++) {
+            if (points[i] == null) throw new IllegalArgumentException();
+            if (points[i].compareTo(points[i + 1]) == 0) throw new IllegalArgumentException();
+        }
+
+        for (int i = 0; i < pointsLength; i++) {
+            for (int j = i + 1; j < pointsLength; j++) {
+                for (int k = j + 1; k < pointsLength; k++) {
+                    for (int m = k + 1; m < pointsLength; m++) {
+                        Point p = points[i];
+                        Point q = points[j];
+                        Point r = points[k];
+                        Point s = points[m];
+
+                        double slopePq = p.slopeTo(q);
+                        double slopePr = p.slopeTo(r);
+                        double slopePs = p.slopeTo(s);
+
+                        if (slopePq != Double.NEGATIVE_INFINITY &&
+                                slopePr != Double.NEGATIVE_INFINITY &&
+                                slopePs != Double.NEGATIVE_INFINITY) {
+                            if (slopePq == slopePr && slopePq == slopePs) {
+                                numSegments++;
+                                Point[] unsorted = new Point[] { p, q, r, s };
+                                Arrays.sort(unsorted);
+                                lineSegments.add(new LineSegment(unsorted[0], unsorted[3]));
+                            }
+                        }
+                    }
+                }
             }
         }
     }
