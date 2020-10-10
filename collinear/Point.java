@@ -9,6 +9,7 @@
  ******************************************************************************/
 
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Comparator;
 
@@ -61,8 +62,8 @@ public class Point implements Comparable<Point> {
      */
     public double slopeTo(Point that) {
         if (compareTo(that) == 0) return Double.NEGATIVE_INFINITY;
-        if (x == that.x) return 0.0;
-        if (y == that.y) return Double.POSITIVE_INFINITY;
+        if (x == that.x) return Double.POSITIVE_INFINITY;
+        if (y == that.y) return 0.0;
         return (double) (y - that.y) / (x - that.x);
     }
 
@@ -126,16 +127,31 @@ public class Point implements Comparable<Point> {
         // some value
         assert testSlopeTo(2, 6, 4, 8) == 1.0;
         // horizontal line
-        assert testSlopeTo(3, 4, 3, 2) == 0.0;
+        assert testSlopeTo(3, 4, 3, 2) == Double.POSITIVE_INFINITY;
         // vertical line
-        assert testSlopeTo(8, 5, 9, 5) == Double.POSITIVE_INFINITY;
+        assert testSlopeTo(8, 5, 9, 5) == 0.0;
         // same points
         assert testSlopeTo(4, 7, 4, 7) == Double.NEGATIVE_INFINITY;
+
+        Point p = new Point(10, 31);
+        Point q = new Point(347, 82);
+        Point r = new Point(475, 31);
+        StdOut.println("pq " + p.slopeTo(q) +
+                               " pr " + p.slopeTo(r) +
+                               " compare " + p.slopeOrder().compare(q, r));
+
+        Point p1 = new Point(6, 5);
+        Point q1 = new Point(1, 1);
+        Point r1 = new Point(5, 5);
+        StdOut.println("pq " + p1.slopeTo(q1) +
+                               " pr " + p1.slopeTo(r1) +
+                               " compare " + p1.slopeOrder().compare(q1, r1));
     }
 
     private class PointsComparator implements Comparator<Point> {
 
         public int compare(Point point1, Point point2) {
+            if (point1 == null || point2 == null) throw new NullPointerException();
             double slopePoint1 = Point.this.slopeTo(point1);
             double slopePoint2 = Point.this.slopeTo(point2);
             if (slopePoint1 > slopePoint2) return +1;

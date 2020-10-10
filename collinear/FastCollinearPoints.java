@@ -8,7 +8,6 @@ import java.util.Collections;
 
 public class FastCollinearPoints {
 
-    private int numSegments = 0;
     private final ArrayList<LineSegment> lineSegments = new ArrayList<>();
 
     public FastCollinearPoints(Point[] points) {
@@ -30,49 +29,23 @@ public class FastCollinearPoints {
 
             Arrays.sort(sortedArray, p.slopeOrder());
 
-            System.out.println();
-            System.out.println("p " + p.toString());
-            printArrays(points);
-            System.out.println();
-            printArrays(sortedArray);
-            System.out.println();
-            for (int j = 0; j < pointsLength; j++) {
-                if (p.compareTo(sortedArray[j]) != 0)
-                    System.out.print(p.slopeTo(sortedArray[j]) + " ");
-            }
-            System.out.println();
-
             ArrayList<Point> collinearPoints = new ArrayList<>();
 
             for (int j = 0; j < pointsLength - 2; j++) {
-                if (p.compareTo(sortedArray[j]) != 0) {
-                    Point q = sortedArray[j];
-                    Point r = sortedArray[j + 1];
-                    Point s = sortedArray[j + 2];
-                    double slopePq = p.slopeTo(q);
-                    double slopePr = p.slopeTo(r);
-                    double slopePs = p.slopeTo(s);
-                    if (slopePq == slopePr && slopePq == slopePs) {
-                        System.out.println(
-                                "pq " + slopePq +
-                                        " pr " + slopePr +
-                                        " ps " + slopePs +
-                                        " p " + p.toString() +
-                                        " q " + q.toString() +
-                                        " r " + r.toString() +
-                                        " s " + s.toString()
-                        );
-                        collinearPoints.add(p);
-                        collinearPoints.add(q);
-                        collinearPoints.add(r);
-                        collinearPoints.add(s);
-                        if (pointsLength < j + 3) break;
-                        for (int k = j + 3; k < pointsLength; k++) {
-                            if (slopePq == p.slopeTo(sortedArray[k])) {
-                                collinearPoints.add(sortedArray[k]);
-                            }
-                        }
-                    }
+                Point q = sortedArray[j];
+                Point r = sortedArray[j + 1];
+                Point s = sortedArray[j + 2];
+
+                double slopePq = p.slopeTo(q);
+                if (!collinearPoints.isEmpty())
+                    slopePq = p.slopeTo(collinearPoints.get(1));
+                double slopePr = p.slopeTo(r);
+                double slopePs = p.slopeTo(s);
+                if (slopePq == slopePr && slopePq == slopePs) {
+                    collinearPoints.add(p);
+                    collinearPoints.add(q);
+                    collinearPoints.add(r);
+                    collinearPoints.add(s);
                 }
             }
 
@@ -82,19 +55,12 @@ public class FastCollinearPoints {
                         new LineSegment(
                                 collinearPoints.get(0),
                                 collinearPoints.get(collinearPoints.size() - 1)));
-                numSegments++;
             }
         }
     }
 
-    private void printArrays(Point[] points) {
-        for (int j = 0; j < points.length; j++) {
-            System.out.print(points[j] + " ");
-        }
-    }
-
     public int numberOfSegments() {
-        return numSegments;
+        return lineSegments.size();
     }
 
     public LineSegment[] segments() {

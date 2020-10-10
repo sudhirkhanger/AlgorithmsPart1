@@ -54,17 +54,17 @@
     <property name="run.code.analysis.last.selected.profile" value="pAlgorithms, Part I" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.FastCollinearPoints">
+  <component name="RunManager" selected="Application.Point">
     <configuration name="BruteCollinearPoints" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="BruteCollinearPoints" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="input6.txt" />
+      <option name="PROGRAM_PARAMETERS" value="grid5x5.txt" />
       <method v="2" />
     </configuration>
     <configuration name="FastCollinearPoints" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="FastCollinearPoints" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="input10.txt" />
+      <option name="PROGRAM_PARAMETERS" value="mystery10089.txt" />
       <method v="2" />
     </configuration>
     <configuration name="Point" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -97,26 +97,30 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="768" y="223" width="382" height="592" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1595872340206" />
+    <state x="715" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602299246937">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="715" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1036@0.0.1920.1036" timestamp="1602299246937" />
     <state x="713" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1596350060251">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="713" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1036@0.0.1920.1036" timestamp="1596350060251" />
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1602226168298">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1602310565497">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1602226168298" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1602226168297">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1602310565497">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1602226168297" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1602226168297">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1602310565497">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1602226168297" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1602226168298">
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1602310565497">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1602226168298" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
     <state width="1896" height="324" key="GridCell.Tab.1.bottom" timestamp="1594357783209">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
