@@ -15,10 +15,14 @@ public class BruteCollinearPoints {
 
         int pointsLength = points.length;
         if (pointsLength == 0) return;
-        Arrays.sort(points);
-        for (int i = 0; i < pointsLength - 1; i++) {
+
+        for (int i = 0; i < pointsLength; i++) {
             if (points[i] == null) throw new IllegalArgumentException();
-            if (points[i].compareTo(points[i + 1]) == 0) throw new IllegalArgumentException();
+        }
+
+        for (int i = 0; i < pointsLength; i++) {
+            for (int j = i + 1; j < pointsLength; j++)
+                if (points[i].compareTo(points[j]) == 0) throw new IllegalArgumentException();
         }
 
         for (int i = 0; i < pointsLength; i++) {

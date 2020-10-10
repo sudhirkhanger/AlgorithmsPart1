@@ -54,17 +54,17 @@
     <property name="run.code.analysis.last.selected.profile" value="pAlgorithms, Part I" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Point">
+  <component name="RunManager" selected="Application.FastCollinearPoints">
     <configuration name="BruteCollinearPoints" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="BruteCollinearPoints" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="grid5x5.txt" />
+      <option name="PROGRAM_PARAMETERS" value="input6.txt" />
       <method v="2" />
     </configuration>
     <configuration name="FastCollinearPoints" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="FastCollinearPoints" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="mystery10089.txt" />
+      <option name="PROGRAM_PARAMETERS" value="input10.txt" />
       <method v="2" />
     </configuration>
     <configuration name="Point" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -105,22 +105,22 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="713" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1036@0.0.1920.1036" timestamp="1596350060251" />
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1602310565497">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1602312380442">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1602310565497">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1602312380442" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1602312380441">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1602310565497">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1602312380441" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1602312380440">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1602310565497">
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1602312380440" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1602312380441">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1602310565497" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1602312380441" />
     <state width="1896" height="324" key="GridCell.Tab.1.bottom" timestamp="1594357783209">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -137,10 +137,10 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state width="1896" height="324" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1594357783208" />
-    <state x="444" y="94" width="1022" height="733" key="SettingsEditor" timestamp="1596126090094">
+    <state x="444" y="94" width="1022" height="733" key="SettingsEditor" timestamp="1602312378632">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="444" y="94" width="1022" height="733" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1596126090094" />
+    <state x="444" y="94" width="1022" height="733" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1602312378632" />
     <state x="689" y="252" width="621" height="524" key="StructurePopup" timestamp="1602129137439">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
