@@ -15,7 +15,7 @@ public class FastCollinearPoints {
 
         int pointsLength = points.length;
         if (pointsLength == 0) return;
-        
+
         for (int i = 0; i < pointsLength; i++) {
             if (points[i] == null) throw new IllegalArgumentException();
         }
@@ -55,10 +55,11 @@ public class FastCollinearPoints {
 
             if (collinearPoints.size() > 3) {
                 Collections.sort(collinearPoints);
-                lineSegments.add(
-                        new LineSegment(
-                                collinearPoints.get(0),
-                                collinearPoints.get(collinearPoints.size() - 1)));
+                Point minPoint = collinearPoints.get(0);
+                Point maxPoint = collinearPoints.get(collinearPoints.size() - 1);
+                if (p.compareTo(maxPoint) == 0) {
+                    lineSegments.add(new LineSegment(minPoint, maxPoint));
+                }
             }
         }
     }
