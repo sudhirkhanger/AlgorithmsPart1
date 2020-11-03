@@ -38,7 +38,11 @@ public class Board {
 
     // number of tiles out of place
     public int hamming() {
-        return -1;
+        int num = 0;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                if (tiles[i][j] != 0 && tiles[i][j] != i + j + 1) num++;
+        return num;
     }
 
     // sum of Manhattan distances between tiles and goal
@@ -83,5 +87,8 @@ public class Board {
 
         // Test dimensions
         StdOut.println("Provided n " + n + " calculated " + initial.dimension());
+
+        // Test hamming distance
+        StdOut.println("hamming dist " + initial.hamming());
     }
 }
