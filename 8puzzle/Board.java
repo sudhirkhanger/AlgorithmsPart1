@@ -33,7 +33,7 @@ public class Board {
 
     // board dimension n
     public int dimension() {
-        return -1;
+        return n;
     }
 
     // number of tiles out of place
@@ -78,6 +78,10 @@ public class Board {
                 tiles[i][j] = in.readInt();
         Board initial = new Board(tiles);
 
+        // Test toString
         StdOut.println(initial.toString());
+
+        // Test dimensions
+        StdOut.println("Provided n " + n + " calculated " + initial.dimension());
     }
 }
