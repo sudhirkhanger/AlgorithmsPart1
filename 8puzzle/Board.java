@@ -1,13 +1,16 @@
+import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
 public class Board {
 
     private final int[][] tiles;
+    private final int n;
 
     // create a board from an n-by-n array of tiles,
     // where tiles[row][col] = tile at (row, col)
     public Board(int[][] tiles) {
         this.tiles = new int[tiles.length][tiles.length];
+        n = tiles.length;
         for (int i = 0; i < tiles.length; i++) {
             for (int j = 0; j < tiles.length; j++) {
                 this.tiles[i][j] = tiles[i][j];
@@ -17,14 +20,15 @@ public class Board {
 
     // string representation of this board
     public String toString() {
-        StringBuilder grid = new StringBuilder(tiles.length + "");
-        for (int i = 0; i < tiles.length; i++) {
-            grid.append("\n");
-            for (int j = 0; j < tiles.length; j++) {
-                grid.append(tiles[i][j] + " ");
+        StringBuilder s = new StringBuilder();
+        s.append(n + "\n");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                s.append(String.format("%2d ", tiles[i][j]));
             }
+            s.append("\n");
         }
-        return grid.toString();
+        return s.toString();
     }
 
     // board dimension n
@@ -64,8 +68,16 @@ public class Board {
 
     // unit testing (not graded)
     public static void main(String[] args) {
-        int[][] testArray = { { 1, 2 }, { 3, 4 } };
-        Board testBoard = new Board(testArray);
-        StdOut.println(testBoard.toString());
+
+        // create initial board from file
+        In in = new In(args[0]);
+        int n = in.readInt();
+        int[][] tiles = new int[n][n];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                tiles[i][j] = in.readInt();
+        Board initial = new Board(tiles);
+
+        StdOut.println(initial.toString());
     }
 }

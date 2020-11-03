@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithms, Part I.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms, Part I.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +36,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="106" />
-    <option name="y" value="23" />
-    <option name="width" value="938" />
-    <option name="height" value="765" />
-  </component>
   <component name="ProjectId" id="1itlaIYoaZfMkpDNqisrttsUaaJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,7 +51,7 @@
     <property name="ToolWindowMessages.ShowToolbar" value="false" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
@@ -74,9 +66,21 @@
     </todo-panel>
   </component>
   <component name="WindowStateProjectService">
-    <state x="444" y="94" key="SettingsEditor" timestamp="1602734982114">
+    <state x="744" y="274" key="FileChooserDialogImpl" timestamp="1604117114587">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="444" y="94" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1602734982114" />
+    <state x="744" y="274" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1604117114587" />
+    <state x="444" y="94" width="1032" height="848" key="SettingsEditor" timestamp="1604117115695">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="444" y="94" width="1032" height="848" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1604117115695" />
+    <state x="721" y="258" key="refactoring.ChangeSignatureDialog" timestamp="1604378608439">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="721" y="258" key="refactoring.ChangeSignatureDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1604378608439" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1602740495307">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1602740495307" />
   </component>
 </project>
