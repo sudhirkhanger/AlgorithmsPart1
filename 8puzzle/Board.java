@@ -41,13 +41,22 @@ public class Board {
         int num = 0;
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
-                if (tiles[i][j] != 0 && tiles[i][j] != i + j + 1) num++;
+                if (tiles[i][j] != 0 && tiles[i][j] != xyTo1D(i, j)) num++;
         return num;
     }
 
     // sum of Manhattan distances between tiles and goal
     public int manhattan() {
-        return -1;
+        int manhattan = 0;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                if (tiles[i][j] != 0) {
+                    Pair pair = toXy(tiles[i][j]);
+                    if (!(i == pair.a && j == pair.b)) manhattan +=
+                            toPositive(i - pair.a) + toPositive(j - pair.b);
+                }
+            }
+        return manhattan;
     }
 
     // is this board the goal board?
@@ -86,9 +95,41 @@ public class Board {
         StdOut.println(initial.toString());
 
         // Test dimensions
-        StdOut.println("Provided n " + n + " calculated " + initial.dimension());
+        StdOut.println("dimension " + initial.dimension());
 
         // Test hamming distance
-        StdOut.println("hamming dist " + initial.hamming());
+        StdOut.println("hamming " + initial.hamming());
+
+        // Test manhattan distance
+        StdOut.println("manhattan " + initial.manhattan());
+    }
+
+    class Pair {
+        private final int a;
+        private final int b;
+
+        Pair(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
+
+    private int xyTo1D(int row, int col) {
+        return row * n + col + 1;
+    }
+
+    private Pair toXy(int given) {
+        int a = given / n;
+        int b = toPositive((given % n) - 1);
+        if (given % n == 0) {
+            a = a - 1;
+            b = n - 1;
+        }
+        return new Pair(a, b);
+    }
+
+    private int toPositive(int given) {
+        if (given < 0) return given * -1;
+        return given;
     }
 }
