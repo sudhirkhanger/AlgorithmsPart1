@@ -126,19 +126,6 @@ public class Board {
         Board testBoard = new Board(testTiles);
 
         StdOut.println("equals " + initial.equals(testBoard));
-
-        for (int i = 0; i < testBoardSize; i++) {
-            for (int j = 0; j < testBoardSize; j++)
-                StdOut.print(initial.tiles[i][j] + " ");
-        }
-
-        StdOut.println();
-
-        for (int i = 0; i < testBoardSize; i++) {
-            for (int j = 0; j < testBoardSize; j++)
-                StdOut.print(testBoard.tiles[i][j] + " ");
-        }
-        StdOut.println();
     }
 
     class Pair {

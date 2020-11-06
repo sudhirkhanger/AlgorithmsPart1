@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="check null properly">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../8puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../8puzzle/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../percolation" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -126,16 +126,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="check null properly" />
     <option name="LAST_COMMIT_MESSAGE" value="check null properly" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="768" y="223" width="382" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1595872340206">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="768" y="223" width="382" height="592" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1595872340206" />
     <state x="715" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602299246937">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -152,6 +149,10 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="100" y="100" width="1720" height="836" maximized="true" key="DiffContextDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1602470702870" />
+    <state x="744" y="274" key="FileChooserDialogImpl" timestamp="1604635540586">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="744" y="274" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1604635540586" />
     <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1602492757726">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -168,22 +169,6 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1602492757725" />
-    <state width="1896" height="324" key="GridCell.Tab.1.bottom" timestamp="1594357783209">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="324" key="GridCell.Tab.1.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1594357783209" />
-    <state width="1896" height="324" key="GridCell.Tab.1.center" timestamp="1594357783208">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="324" key="GridCell.Tab.1.center/0.0.1920.1036@0.0.1920.1036" timestamp="1594357783208" />
-    <state width="1896" height="324" key="GridCell.Tab.1.left" timestamp="1594357783207">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="324" key="GridCell.Tab.1.left/0.0.1920.1036@0.0.1920.1036" timestamp="1594357783207" />
-    <state width="1896" height="324" key="GridCell.Tab.1.right" timestamp="1594357783208">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="324" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1594357783208" />
     <state x="595" y="177" key="RollbackChangesDialog" timestamp="1602471263521">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
