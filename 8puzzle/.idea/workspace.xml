@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../collinear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../collinear/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../queues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../queues/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,47 +74,57 @@
     <configuration name="Board" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Board" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="puzzle4x4-01.txt" />
+      <option name="PROGRAM_PARAMETERS" value="puzzle3x3-04.txt" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <method v="2" />
     </configuration>
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="100" y="100" width="1720" height="836" maximized="true" key="DiffContextDialog" timestamp="1604914838837">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="100" y="100" width="1720" height="836" maximized="true" key="DiffContextDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1604914838837" />
     <state x="744" y="274" key="FileChooserDialogImpl" timestamp="1604635628001">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="744" y="274" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1604635628001" />
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1604594240549">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1604914685180">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1604594240549" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1604594240549">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1604914685180" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1604914685178">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1604594240549" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1604594240548">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1604914685178" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1604914685177">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1604594240548" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1604594240549">
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1604914685177" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1604914685179">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1604594240549" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1604914685179" />
     <state x="444" y="94" width="1032" height="848" key="SettingsEditor" timestamp="1604545124610">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="444" y="94" width="1032" height="848" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1604545124610" />
+    <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604913145832">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1036@0.0.1920.1036" timestamp="1604913145832" />
     <state x="721" y="258" key="refactoring.ChangeSignatureDialog" timestamp="1604378608439">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>

@@ -1,4 +1,5 @@
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
 
 public class Board {
@@ -52,8 +53,8 @@ public class Board {
             for (int j = 0; j < n; j++) {
                 if (tiles[i][j] != 0) {
                     Pair pair = toXy(tiles[i][j]);
-                    if (!(i == pair.a && j == pair.b)) manhattan +=
-                            toPositive(i - pair.a) + toPositive(j - pair.b);
+                    if (!(i == pair.row && j == pair.col)) manhattan +=
+                            toPositive(i - pair.row) + toPositive(j - pair.col);
                 }
             }
         return manhattan;
@@ -80,7 +81,40 @@ public class Board {
 
     // all neighboring boards
     public Iterable<Board> neighbors() {
-        return null;
+        Queue<Board> q = new Queue<Board>();
+
+        Pair pos = null;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (tiles[i][j] == 0) {
+                    pos = new Pair(i, j);
+                }
+            }
+        }
+
+        if (pos == null) return q;
+
+        // blank tile in corner
+        // return 2 neighbours
+        // 0, 1 and 1, 0
+        if (pos.row == 0 && pos.col == 0) {
+            q.enqueue(exch(0, 0, 0, 1));
+            q.enqueue(exch(0, 0, 1, 0));
+            return q;
+        }
+
+        // blank tile in side
+        // return 3 neighbours
+        if (pos.row == 0 || pos.row == n - 1 || pos.col == 0 || pos.col == n - 1) {
+            // todo
+            return q;
+        }
+
+        // blank tile inside
+        // return 4 neighbours
+
+        return q;
     }
 
     // a board that is obtained by exchanging any pair of tiles
@@ -126,15 +160,19 @@ public class Board {
         Board testBoard = new Board(testTiles);
 
         StdOut.println("equals " + initial.equals(testBoard));
+
+        for (Board board : initial.neighbors()) {
+            StdOut.println(board.toString());
+        }
     }
 
     class Pair {
-        private final int a;
-        private final int b;
+        private final int row;
+        private final int col;
 
-        Pair(int a, int b) {
-            this.a = a;
-            this.b = b;
+        Pair(int row, int col) {
+            this.row = row;
+            this.col = col;
         }
     }
 
@@ -155,5 +193,25 @@ public class Board {
     private int toPositive(int given) {
         if (given < 0) return given * -1;
         return given;
+    }
+
+    private int[][] copyTiles() {
+        int[][] t = new int[n][n];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                t[i][j] = tiles[i][j];
+            }
+        return t;
+    }
+
+    private Board exch(
+            int blankTileRow,
+            int blankTileCol,
+            int exchTileRow,
+            int exchTileCol) {
+        int[][] t = copyTiles();
+        t[blankTileRow][blankTileCol] = t[exchTileRow][exchTileCol];
+        t[exchTileRow][exchTileCol] = 0;
+        return new Board(t);
     }
 }
