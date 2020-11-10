@@ -97,10 +97,27 @@ public class Board {
 
         // blank tile in corner
         // return 2 neighbours
-        // 0, 1 and 1, 0
-        if (pos.row == 0 && pos.col == 0) {
-            q.enqueue(exch(0, 0, 0, 1));
-            q.enqueue(exch(0, 0, 1, 0));
+        if (pos.row == 0) {
+            if (pos.col == 0) {
+                q.enqueue(exch(0, 0, 0, 1));
+                q.enqueue(exch(0, 0, 1, 0));
+            }
+            if (pos.col == 3) {
+                q.enqueue(exch(0, 3, 0, 2));
+                q.enqueue(exch(0, 3, 1, 3));
+            }
+            return q;
+        }
+
+        if (pos.row == 3) {
+            if (pos.col == 0) {
+                q.enqueue(exch(3, 0, 2, 0));
+                q.enqueue(exch(3, 0, 3, 1));
+            }
+            if (pos.col == 3) {
+                q.enqueue(exch(3, 3, 2, 3));
+                q.enqueue(exch(3, 3, 3, 2));
+            }
             return q;
         }
 
