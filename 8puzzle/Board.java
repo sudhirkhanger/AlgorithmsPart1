@@ -102,21 +102,21 @@ public class Board {
                 q.enqueue(exch(0, 0, 0, 1));
                 q.enqueue(exch(0, 0, 1, 0));
             }
-            if (pos.col == 3) {
-                q.enqueue(exch(0, 3, 0, 2));
-                q.enqueue(exch(0, 3, 1, 3));
+            if (pos.col == n - 1) {
+                q.enqueue(exch(0, n - 1, 0, n - 2));
+                q.enqueue(exch(0, n - 1, 1, n - 1));
             }
             return q;
         }
 
-        if (pos.row == 3) {
+        if (pos.row == n - 1) {
             if (pos.col == 0) {
-                q.enqueue(exch(3, 0, 2, 0));
-                q.enqueue(exch(3, 0, 3, 1));
+                q.enqueue(exch(n - 1, 0, n - 2, 0));
+                q.enqueue(exch(n - 1, 0, n - 1, 1));
             }
-            if (pos.col == 3) {
-                q.enqueue(exch(3, 3, 2, 3));
-                q.enqueue(exch(3, 3, 3, 2));
+            if (pos.col == n - 1) {
+                q.enqueue(exch(n - 1, n - 1, n - 2, n - 1));
+                q.enqueue(exch(n - 1, n - 1, n - 1, n - 2));
             }
             return q;
         }
