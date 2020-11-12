@@ -94,44 +94,78 @@ public class Board {
         }
 
         if (pos == null) return q;
+        if (neighborCorner(q, pos)) return q; // 2 neighbours
+        if (neighborSide(q, pos)) return q; // 3 neighbors
+        neighborCenter(q, pos); // 4 neighbors
+        return q;
+    }
 
-        // blank tile in corner
-        // return 2 neighbours
+    private boolean neighborCorner(Queue<Board> q, Pair pos) {
         if (pos.row == 0) {
             if (pos.col == 0) {
                 q.enqueue(exch(0, 0, 0, 1));
                 q.enqueue(exch(0, 0, 1, 0));
+                return true;
             }
             if (pos.col == n - 1) {
                 q.enqueue(exch(0, n - 1, 0, n - 2));
                 q.enqueue(exch(0, n - 1, 1, n - 1));
+                return true;
             }
-            return q;
         }
 
         if (pos.row == n - 1) {
             if (pos.col == 0) {
                 q.enqueue(exch(n - 1, 0, n - 2, 0));
                 q.enqueue(exch(n - 1, 0, n - 1, 1));
+                return true;
             }
             if (pos.col == n - 1) {
                 q.enqueue(exch(n - 1, n - 1, n - 2, n - 1));
                 q.enqueue(exch(n - 1, n - 1, n - 1, n - 2));
+                return true;
             }
-            return q;
         }
+        return false;
+    }
 
-        // blank tile in side
-        // return 3 neighbours
-        if (pos.row == 0 || pos.row == n - 1 || pos.col == 0 || pos.col == n - 1) {
-            // todo
-            return q;
+    private boolean neighborSide(Queue<Board> q, Pair pos) {
+        if (pos.col == 0 || pos.col == n - 1) {
+            if (pos.row == 0) {
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1));
+                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col));
+                return true;
+            }
+            if (pos.row == n - 1) {
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1));
+                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
+                return true;
+            }
         }
+        if (pos.row > 0 || pos.row < n - 1) {
+            if (pos.col == 0) {
+                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
+                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1));
+                return true;
+            }
+            if (pos.row == n - 1) {
+                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
+                q.enqueue(exch(pos.row, pos.col, pos.row + 2, pos.col));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
+                return true;
+            }
+        }
+        return false;
+    }
 
-        // blank tile inside
-        // return 4 neighbours
-
-        return q;
+    private void neighborCenter(Queue<Board> q, Pair pos) {
+        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
+        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 2));
+        q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
+        q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col));
     }
 
     // a board that is obtained by exchanging any pair of tiles

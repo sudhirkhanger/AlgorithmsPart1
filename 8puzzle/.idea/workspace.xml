@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="neighbours corner 2">
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
     </list>
@@ -65,6 +64,7 @@
   <component name="PropertiesComponent">
     <property name="ToolWindowMessages.ShowToolbar" value="false" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../queues" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -75,7 +75,7 @@
     <configuration name="Board" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Board" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="puzzle3x3-04.txt" />
+      <option name="PROGRAM_PARAMETERS" value="puzzle4x4-01.txt" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -99,10 +99,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="neighbours corner 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="507" y="41" key="CommitChangelistDialog2" timestamp="1604979658376">
+    <state x="507" y="41" key="CommitChangelistDialog2" timestamp="1604980251143">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="507" y="41" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1604979658376" />
+    <state x="507" y="41" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1604980251143" />
     <state x="100" y="100" width="1720" height="836" maximized="true" key="DiffContextDialog" timestamp="1604979682143">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -111,34 +111,38 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="744" y="274" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1604635628001" />
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1604979711389">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1604986052610">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1604979711389" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1604979711387">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1604986052610">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1604979711387" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1604979711385">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1604986052610">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1604979711385" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1604979711388">
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1604986052610">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1604979711388" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
     <state x="444" y="94" width="1032" height="848" key="SettingsEditor" timestamp="1604979765703">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="444" y="94" width="1032" height="848" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1604979765703" />
-    <state x="556" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604979660368">
+    <state x="556" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604980254848">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="556" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1604979660368" />
+    <state x="556" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1604980254848" />
     <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604913145832">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1036@0.0.1920.1036" timestamp="1604913145832" />
+    <state x="694" y="270" key="extract.method.dialog" timestamp="1604981071465">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="694" y="270" key="extract.method.dialog/0.0.1920.1036@0.0.1920.1036" timestamp="1604981071465" />
     <state x="721" y="258" key="refactoring.ChangeSignatureDialog" timestamp="1604378608439">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
