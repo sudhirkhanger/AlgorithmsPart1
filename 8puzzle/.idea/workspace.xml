@@ -1,155 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="neighbours corner 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
+    <list default="true" id="3ed61d15-5fa3-4116-b32d-9c0c9bdb0e4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="DISPLAY_NOTIFICATION_POPUP" value="false" />
-    <option name="CLEAR_OUTPUT_DIRECTORY" value="false" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-    <option name="SCHEME" value="Project" />
-  </component>
-  <component name="FindBugs-IDEA-Workspace">
-    <analyzeAfterCompile>true</analyzeAfterCompile>
-    <toolWindowToFront>false</toolWindowToFront>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectId" id="1itlaIYoaZfMkpDNqisrttsUaaJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="abbreviatePackageNames" value="true" />
-    <option name="autoscrollFromSource" value="true" />
-    <option name="autoscrollToSource" value="true" />
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
-    <option name="showModules" value="false" />
-    <option name="sortByType" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="ToolWindowMessages.ShowToolbar" value="false" />
-    <property name="ToolWindowRun.ShowToolbar" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../queues" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RunManager">
-    <configuration name="Board" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Board" />
-      <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="puzzle4x4-01.txt" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="neighbours corner 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="neighbours corner 2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="507" y="41" key="CommitChangelistDialog2" timestamp="1604980251143">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="507" y="41" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1604980251143" />
-    <state x="100" y="100" width="1720" height="836" maximized="true" key="DiffContextDialog" timestamp="1604979682143">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="100" y="100" width="1720" height="836" maximized="true" key="DiffContextDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1604979682143" />
-    <state x="744" y="274" key="FileChooserDialogImpl" timestamp="1604635628001">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="744" y="274" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1604635628001" />
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1604986052610">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1604986052610">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1604986052610">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1604986052610">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1604986052610" />
-    <state x="444" y="94" width="1032" height="848" key="SettingsEditor" timestamp="1604979765703">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="444" y="94" width="1032" height="848" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1604979765703" />
-    <state x="556" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604980254848">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="556" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1604980254848" />
-    <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604913145832">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1036@0.0.1920.1036" timestamp="1604913145832" />
-    <state x="694" y="270" key="extract.method.dialog" timestamp="1604981071465">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="694" y="270" key="extract.method.dialog/0.0.1920.1036@0.0.1920.1036" timestamp="1604981071465" />
-    <state x="721" y="258" key="refactoring.ChangeSignatureDialog" timestamp="1604378608439">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="721" y="258" key="refactoring.ChangeSignatureDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1604378608439" />
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1602740495307">
-      <screen x="0" y="0" width="1920" height="1036" />
-    </state>
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1602740495307" />
   </component>
 </project>
