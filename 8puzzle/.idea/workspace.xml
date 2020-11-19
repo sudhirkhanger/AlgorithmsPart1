@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d9b60a2e-205b-4b5f-a827-d959a1876fe4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1kUhbPOxom0DOwY9dngZ9FTwd4J" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showModules" value="false" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Board" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Board" />
+      <module name="Algorithms, Part I" />
+      <option name="PROGRAM_PARAMETERS" value="puzzle3x3-05.txt" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1605764725769">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1605764725769" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1605764725769">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1605764725769" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1605764725769">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1605764725769" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1605764725769">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1605764725769" />
+    <state x="689" y="252" width="621" height="524" key="StructurePopup" timestamp="1605763785983">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="689" y="252" width="621" height="524" key="StructurePopup/0.0.1920.1036@0.0.1920.1036" timestamp="1605763785983" />
+  </component>
+</project>

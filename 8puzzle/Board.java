@@ -95,7 +95,8 @@ public class Board {
             }
         }
 
-        if (pos == null) return q;
+        StdOut.println("Row " + pos.row + " Col " + pos.col);
+
         if (neighborCorner(q, pos)) return q; // 2 neighbours
         if (neighborSide(q, pos)) return q; // 3 neighbors
         neighborCenter(q, pos); // 4 neighbors
@@ -132,7 +133,7 @@ public class Board {
     }
 
     private boolean neighborSide(Queue<Board> q, Pair pos) {
-        if (pos.col == 0 || pos.col == n - 1) {
+        if (pos.col > 0 || pos.col < n - 1) {
             if (pos.row == 0) {
                 q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
                 q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1, BLANK_TILE));
@@ -241,9 +242,9 @@ public class Board {
         StdOut.println("equals " + initial.equals(testBoard));
 
         // todo fix neighbour using puzzle3x3-05.txt
-        /*for (Board board : initial.neighbors()) {
+        for (Board board : initial.neighbors()) {
             StdOut.println(board.toString());
-        }*/
+        }
 
         StdOut.println(initial.twin().toString());
     }
