@@ -1,9 +1,11 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
 
 public class Board {
 
+    private static final int BLANK_TILE = 0;
     private final int[][] tiles;
     private final int n;
 
@@ -103,26 +105,26 @@ public class Board {
     private boolean neighborCorner(Queue<Board> q, Pair pos) {
         if (pos.row == 0) {
             if (pos.col == 0) {
-                q.enqueue(exch(0, 0, 0, 1));
-                q.enqueue(exch(0, 0, 1, 0));
+                q.enqueue(exch(0, 0, 0, 1, BLANK_TILE));
+                q.enqueue(exch(0, 0, 1, 0, BLANK_TILE));
                 return true;
             }
             if (pos.col == n - 1) {
-                q.enqueue(exch(0, n - 1, 0, n - 2));
-                q.enqueue(exch(0, n - 1, 1, n - 1));
+                q.enqueue(exch(0, n - 1, 0, n - 2, BLANK_TILE));
+                q.enqueue(exch(0, n - 1, 1, n - 1, BLANK_TILE));
                 return true;
             }
         }
 
         if (pos.row == n - 1) {
             if (pos.col == 0) {
-                q.enqueue(exch(n - 1, 0, n - 2, 0));
-                q.enqueue(exch(n - 1, 0, n - 1, 1));
+                q.enqueue(exch(n - 1, 0, n - 2, 0, BLANK_TILE));
+                q.enqueue(exch(n - 1, 0, n - 1, 1, BLANK_TILE));
                 return true;
             }
             if (pos.col == n - 1) {
-                q.enqueue(exch(n - 1, n - 1, n - 2, n - 1));
-                q.enqueue(exch(n - 1, n - 1, n - 1, n - 2));
+                q.enqueue(exch(n - 1, n - 1, n - 2, n - 1, BLANK_TILE));
+                q.enqueue(exch(n - 1, n - 1, n - 1, n - 2, BLANK_TILE));
                 return true;
             }
         }
@@ -132,29 +134,29 @@ public class Board {
     private boolean neighborSide(Queue<Board> q, Pair pos) {
         if (pos.col == 0 || pos.col == n - 1) {
             if (pos.row == 0) {
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1));
-                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col, BLANK_TILE));
                 return true;
             }
             if (pos.row == n - 1) {
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1));
-                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
                 return true;
             }
         }
         if (pos.row > 0 || pos.row < n - 1) {
             if (pos.col == 0) {
-                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
-                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1));
+                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1, BLANK_TILE));
                 return true;
             }
             if (pos.row == n - 1) {
-                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
-                q.enqueue(exch(pos.row, pos.col, pos.row + 2, pos.col));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
+                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row + 2, pos.col, BLANK_TILE));
+                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
                 return true;
             }
         }
@@ -162,15 +164,41 @@ public class Board {
     }
 
     private void neighborCenter(Queue<Board> q, Pair pos) {
-        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1));
-        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 2));
-        q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col));
-        q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col));
+        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
+        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 2, BLANK_TILE));
+        q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
+        q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col, BLANK_TILE));
     }
 
     // a board that is obtained by exchanging any pair of tiles
     public Board twin() {
-        return null;
+        int tile1row = 0;
+        int tile1col = 0;
+        int tile2row = 0;
+        int tile2col = 0;
+
+        while (tiles[tile1row][tile1col] == tiles[tile2row][tile2col]) {
+            Pair pair1 = getTile();
+            Pair pair2 = getTile();
+            tile1row = pair1.row;
+            tile1col = pair1.col;
+            tile2row = pair2.row;
+            tile2col = pair2.col;
+        }
+
+        return exch(tile1row, tile1col, tile2row, tile2col, tiles[tile1row][tile1col]);
+    }
+
+    private Pair getTile() {
+        int tile = 0;
+        int row = -1;
+        int col = -1;
+        while (tile == 0) {
+            row = StdRandom.uniform(n);
+            col = StdRandom.uniform(n);
+            tile = tiles[row][col];
+        }
+        return new Pair(row, col);
     }
 
     // unit testing (not graded)
@@ -212,9 +240,12 @@ public class Board {
 
         StdOut.println("equals " + initial.equals(testBoard));
 
-        for (Board board : initial.neighbors()) {
+        // todo fix neighbour using puzzle3x3-05.txt
+        /*for (Board board : initial.neighbors()) {
             StdOut.println(board.toString());
-        }
+        }*/
+
+        StdOut.println(initial.twin().toString());
     }
 
     class Pair {
@@ -259,10 +290,11 @@ public class Board {
             int blankTileRow,
             int blankTileCol,
             int exchTileRow,
-            int exchTileCol) {
+            int exchTileCol,
+            int exchValue) {
         int[][] t = copyTiles();
         t[blankTileRow][blankTileCol] = t[exchTileRow][exchTileCol];
-        t[exchTileRow][exchTileCol] = 0;
+        t[exchTileRow][exchTileCol] = exchValue;
         return new Board(t);
     }
 }
