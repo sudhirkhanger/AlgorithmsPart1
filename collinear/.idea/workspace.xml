@@ -22,6 +22,7 @@
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="check null properly">
       <change beforePath="$PROJECT_DIR$/../8puzzle/.idea/inspectionProfiles/Algorithms__Part_I.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../8puzzle/.idea/inspectionProfiles/Algorithms__Part_I.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../8puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../8puzzle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../percolation/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../queues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../queues/.idea/workspace.xml" afterDir="false" />

@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9b60a2e-205b-4b5f-a827-d959a1876fe4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Algorithms__Part_I.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Algorithms__Part_I.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Solver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../collinear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../collinear/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../percolation/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../queues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../queues/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +36,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Solver">
     <configuration name="Board" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Board" />
       <module name="Algorithms, Part I" />
       <option name="PROGRAM_PARAMETERS" value="puzzle3x3-05.txt" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Solver" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Solver" />
+      <module name="Algorithms, Part I" />
+      <option name="PROGRAM_PARAMETERS" value="puzzle2x2-04.txt" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -50,22 +54,22 @@
     </configuration>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1605765328028">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1605938894052">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1605765328028" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1605765328027">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894052" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1605938894051">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1605765328027" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1605765328026">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894051" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1605938894050">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1605765328026" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1605765328028">
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894050" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1605938894052">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1605765328028" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894052" />
     <state x="689" y="252" width="621" height="524" key="StructurePopup" timestamp="1605851139484">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>

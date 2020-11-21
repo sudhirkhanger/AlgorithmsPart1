@@ -7,30 +7,39 @@ import java.util.Comparator;
 public class Solver {
 
     private final MinPQ<Board> boardMinPQ;
-    private Board dequedBoard = null;
+    private final MinPQ<Board> twinMinPQ;
     private int move = 0;
 
     // find a solution to the initial board (using the A* algorithm)
     public Solver(Board initial) {
         if (initial == null) throw new IllegalArgumentException("board is null");
         boardMinPQ = new MinPQ<>(new BoardComparator());
-
         boardMinPQ.insert(initial);
-
-        while (!dequedBoard.isGoal()) {
-            dequedBoard = boardMinPQ.delMin();
-            dequedBoard.neighbors().forEach(board -> {
-                if (!board.equals(dequedBoard)) {
-                    boardMinPQ.insert(board);
-                    move++;
-                }
-            });
-        }
+        twinMinPQ = new MinPQ<>(new BoardComparator());
+        twinMinPQ.insert(initial.twin());
     }
 
     // is the initial board solvable? (see below)
     public boolean isSolvable() {
-        return false;
+        Board dequedBoard;
+        Board dequedTwin;
+        while (true) {
+            dequedBoard = boardMinPQ.delMin();
+            Board finalDequedBoard = dequedBoard;
+            dequedBoard.neighbors().forEach(board -> {
+                if (!board.equals(finalDequedBoard)) {
+                    boardMinPQ.insert(board);
+                    move++;
+                }
+            });
+            dequedTwin = twinMinPQ.delMin();
+            Board finalDequedTwin = dequedTwin;
+            dequedTwin.neighbors().forEach(board -> {
+                if (!board.equals(finalDequedTwin)) twinMinPQ.insert(board);
+            });
+            if (dequedBoard.isGoal()) return true;
+            if (dequedTwin.isGoal()) return false;
+        }
     }
 
     // min number of moves to solve initial board; -1 if unsolvable

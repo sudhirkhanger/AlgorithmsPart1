@@ -95,8 +95,6 @@ public class Board {
             }
         }
 
-        StdOut.println("Row " + pos.row + " Col " + pos.col);
-
         if (neighborCorner(q, pos)) return q; // 2 neighbours
         if (neighborSide(q, pos)) return q; // 3 neighbors
         neighborCenter(q, pos); // 4 neighbors
@@ -249,7 +247,7 @@ public class Board {
         StdOut.println(initial.twin().toString());
     }
 
-    class Pair {
+    private class Pair {
         private final int row;
         private final int col;
 
