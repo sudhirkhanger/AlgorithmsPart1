@@ -44,7 +44,7 @@ public class Board {
         int num = 0;
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
-                if (tiles[i][j] != 0 && tiles[i][j] != xyTo1D(i, j)) num++;
+                if (tiles[i][j] != 0 && tiles[i][j] != (i * n + j + 1)) num++;
         return num;
     }
 
@@ -54,9 +54,10 @@ public class Board {
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++) {
                 if (tiles[i][j] != 0) {
-                    Pair pair = toXy(tiles[i][j]);
-                    if (!(i == pair.row && j == pair.col)) manhattan +=
-                            toPositive(i - pair.row) + toPositive(j - pair.col);
+                    int row = getRow(tiles[i][j]);
+                    int col = getCol(tiles[i][j]);
+                    if (!(i == row && j == col)) manhattan +=
+                            toPositive(i - row) + toPositive(j - col);
                 }
             }
         return manhattan;
@@ -85,43 +86,47 @@ public class Board {
     public Iterable<Board> neighbors() {
         Queue<Board> q = new Queue<Board>();
 
-        Pair pos = null;
+        // Pair pos = null;
+        int row = -1;
+        int col = -1;
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (tiles[i][j] == 0) {
-                    pos = new Pair(i, j);
+                    // pos = new Pair(i, j);
+                    row = i;
+                    col = j;
                 }
             }
         }
 
-        if (neighborCorner(q, pos)) return q; // 2 neighbours
-        if (neighborSide(q, pos)) return q; // 3 neighbors
-        neighborCenter(q, pos); // 4 neighbors
+        if (neighborCorner(q, row, col)) return q; // 2 neighbours
+        if (neighborSide(q, row, col)) return q; // 3 neighbors
+        neighborCenter(q, row, col); // 4 neighbors
         return q;
     }
 
-    private boolean neighborCorner(Queue<Board> q, Pair pos) {
-        if (pos.row == 0) {
-            if (pos.col == 0) {
+    private boolean neighborCorner(Queue<Board> q, int row, int col) {
+        if (row == 0) {
+            if (col == 0) {
                 q.enqueue(exch(0, 0, 0, 1, BLANK_TILE));
                 q.enqueue(exch(0, 0, 1, 0, BLANK_TILE));
                 return true;
             }
-            if (pos.col == n - 1) {
+            if (col == n - 1) {
                 q.enqueue(exch(0, n - 1, 0, n - 2, BLANK_TILE));
                 q.enqueue(exch(0, n - 1, 1, n - 1, BLANK_TILE));
                 return true;
             }
         }
 
-        if (pos.row == n - 1) {
-            if (pos.col == 0) {
+        if (row == n - 1) {
+            if (col == 0) {
                 q.enqueue(exch(n - 1, 0, n - 2, 0, BLANK_TILE));
                 q.enqueue(exch(n - 1, 0, n - 1, 1, BLANK_TILE));
                 return true;
             }
-            if (pos.col == n - 1) {
+            if (col == n - 1) {
                 q.enqueue(exch(n - 1, n - 1, n - 2, n - 1, BLANK_TILE));
                 q.enqueue(exch(n - 1, n - 1, n - 1, n - 2, BLANK_TILE));
                 return true;
@@ -130,74 +135,70 @@ public class Board {
         return false;
     }
 
-    private boolean neighborSide(Queue<Board> q, Pair pos) {
-        if (pos.col > 0 || pos.col < n - 1) {
-            if (pos.row == 0) {
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col, BLANK_TILE));
+    private boolean neighborSide(Queue<Board> q, int row, int col) {
+        if (col > 0 || col < n - 1) {
+            if (row == 0) {
+                q.enqueue(exch(row, col, row, col - 1, BLANK_TILE));
+                q.enqueue(exch(row, col, row, col + 1, BLANK_TILE));
+                q.enqueue(exch(row, col, row + 1, col, BLANK_TILE));
                 return true;
             }
-            if (pos.row == n - 1) {
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
+            if (row == n - 1) {
+                q.enqueue(exch(row, col, row, col - 1, BLANK_TILE));
+                q.enqueue(exch(row, col, row, col + 1, BLANK_TILE));
+                q.enqueue(exch(row, col, row - 1, col, BLANK_TILE));
                 return true;
             }
         }
-        if (pos.row > 0 || pos.row < n - 1) {
-            if (pos.col == 0) {
-                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 1, BLANK_TILE));
+        if (row > 0 || row < n - 1) {
+            if (col == 0) {
+                q.enqueue(exch(row, col, row - 1, col, BLANK_TILE));
+                q.enqueue(exch(row, col, row + 1, col, BLANK_TILE));
+                q.enqueue(exch(row, col, row, col + 1, BLANK_TILE));
                 return true;
             }
-            if (pos.row == n - 1) {
-                q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row + 2, pos.col, BLANK_TILE));
-                q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
+            if (row == n - 1) {
+                q.enqueue(exch(row, col, row - 1, col, BLANK_TILE));
+                q.enqueue(exch(row, col, row + 2, col, BLANK_TILE));
+                q.enqueue(exch(row, col, row, col - 1, BLANK_TILE));
                 return true;
             }
         }
         return false;
     }
 
-    private void neighborCenter(Queue<Board> q, Pair pos) {
-        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col - 1, BLANK_TILE));
-        q.enqueue(exch(pos.row, pos.col, pos.row, pos.col + 2, BLANK_TILE));
-        q.enqueue(exch(pos.row, pos.col, pos.row - 1, pos.col, BLANK_TILE));
-        q.enqueue(exch(pos.row, pos.col, pos.row + 1, pos.col, BLANK_TILE));
+    private void neighborCenter(Queue<Board> q, int row, int col) {
+        q.enqueue(exch(row, col, row, col - 1, BLANK_TILE));
+        q.enqueue(exch(row, col, row, col + 2, BLANK_TILE));
+        q.enqueue(exch(row, col, row - 1, col, BLANK_TILE));
+        q.enqueue(exch(row, col, row + 1, col, BLANK_TILE));
     }
 
     // a board that is obtained by exchanging any pair of tiles
     public Board twin() {
-        int tile1row = 0;
-        int tile1col = 0;
-        int tile2row = 0;
-        int tile2col = 0;
+        int firstTileRow = 0;
+        int firstTileCol = 0;
+        int secondTileRow = 0;
+        int secondTileCol = 0;
 
-        while (tiles[tile1row][tile1col] == tiles[tile2row][tile2col]) {
-            Pair pair1 = getTile();
-            Pair pair2 = getTile();
-            tile1row = pair1.row;
-            tile1col = pair1.col;
-            tile2row = pair2.row;
-            tile2col = pair2.col;
+        int firstTile = 0;
+        int secondTile = 0;
+        while (firstTile == secondTile) {
+            while (firstTile == 0) {
+                firstTileRow = StdRandom.uniform(n);
+                firstTileCol = StdRandom.uniform(n);
+                firstTile = tiles[firstTileRow][firstTileCol];
+            }
+
+            while (secondTile == 0) {
+                secondTileRow = StdRandom.uniform(n);
+                secondTileCol = StdRandom.uniform(n);
+                secondTile = tiles[secondTileRow][secondTileRow];
+            }
         }
 
-        return exch(tile1row, tile1col, tile2row, tile2col, tiles[tile1row][tile1col]);
-    }
-
-    private Pair getTile() {
-        int tile = 0;
-        int row = -1;
-        int col = -1;
-        while (tile == 0) {
-            row = StdRandom.uniform(n);
-            col = StdRandom.uniform(n);
-            tile = tiles[row][col];
-        }
-        return new Pair(row, col);
+        return exch(firstTileRow, firstTileCol, secondTileRow, secondTileCol,
+                    tiles[firstTileRow][firstTileCol]);
     }
 
     // unit testing (not graded)
@@ -239,36 +240,24 @@ public class Board {
 
         StdOut.println("equals " + initial.equals(testBoard));
 
-        // todo fix neighbour using puzzle3x3-05.txt
+        StdOut.println("Twin\n" + initial.twin().toString());
+
         for (Board board : initial.neighbors()) {
             StdOut.println(board.toString());
         }
-
-        StdOut.println(initial.twin().toString());
     }
 
-    private class Pair {
-        private final int row;
-        private final int col;
-
-        Pair(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
+    private int getRow(int tile) {
+        int row = tile / n;
+        if (row % n == 0) row -= 1;
+        return row;
     }
 
-    private int xyTo1D(int row, int col) {
-        return row * n + col + 1;
-    }
-
-    private Pair toXy(int given) {
-        int a = given / n;
-        int b = toPositive((given % n) - 1);
-        if (given % n == 0) {
-            a = a - 1;
-            b = n - 1;
-        }
-        return new Pair(a, b);
+    private int getCol(int tile) {
+        int mod = tile % n;
+        int col = toPositive(mod - 1);
+        if (mod == 0) col = n - 1;
+        return col;
     }
 
     private int toPositive(int given) {

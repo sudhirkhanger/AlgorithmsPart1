@@ -4,8 +4,7 @@
     <list default="true" id="d9b60a2e-205b-4b5f-a827-d959a1876fe4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../collinear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../collinear/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Solver">
+  <component name="RunManager" selected="Application.Board">
     <configuration name="Board" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Board" />
       <module name="Algorithms, Part I" />
@@ -53,26 +52,38 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pre submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre submission" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1605938894052">
+    <state x="507" y="41" key="CommitChangelistDialog2" timestamp="1605940272991">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894052" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1605938894051">
+    <state x="507" y="41" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1605940272991" />
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1605940804017">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894051" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1605938894050">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804017" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1605940804017">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894050" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1605938894052">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804017" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1605940804016">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1605938894052" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804016" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1605940804017">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804017" />
     <state x="689" y="252" width="621" height="524" key="StructurePopup" timestamp="1605851139484">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="689" y="252" width="621" height="524" key="StructurePopup/0.0.1920.1036@0.0.1920.1036" timestamp="1605851139484" />
+    <state x="556" y="252" key="Vcs.Push.Dialog.v2" timestamp="1605940275038">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="556" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1605940275038" />
   </component>
 </project>
