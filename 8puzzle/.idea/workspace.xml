@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9b60a2e-205b-4b5f-a827-d959a1876fe4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Solver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,55 +34,82 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Board">
+  <component name="RunManager" selected="Application.Solver">
     <configuration name="Board" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Board" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="puzzle3x3-05.txt" />
+      <option name="PROGRAM_PARAMETERS" value="puzzle10.txt" />
       <method v="2" />
     </configuration>
     <configuration name="Solver" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Solver" />
       <module name="Algorithms, Part I" />
-      <option name="PROGRAM_PARAMETERS" value="puzzle2x2-04.txt" />
+      <option name="PROGRAM_PARAMETERS" value="puzzle04.txt" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Board" />
+      <item itemvalue="Application.Solver" />
+    </list>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pre submission" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre submission" />
+    <MESSAGE value="removed the inner class from the Board class" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed the inner class from the Board class" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="507" y="41" key="CommitChangelistDialog2" timestamp="1605940272991">
+    <state x="418" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606185374393">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="507" y="41" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1605940272991" />
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1605940804017">
+    <state x="418" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1606185374393" />
+    <state x="769" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1606237277657">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804017" />
-    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1605940804017">
+    <state x="769" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1606237277657" />
+    <state x="507" y="41" key="CommitChangelistDialog2" timestamp="1606019538172">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804017" />
-    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1605940804016">
+    <state x="507" y="41" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1606019538172" />
+    <state x="744" y="274" key="FileChooserDialogImpl" timestamp="1606241891523">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804016" />
-    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1605940804017">
+    <state x="744" y="274" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1606241891523" />
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom" timestamp="1606193224725">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1605940804017" />
-    <state x="689" y="252" width="621" height="524" key="StructurePopup" timestamp="1605851139484">
+    <state width="1896" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1606193224725" />
+    <state width="1896" height="263" key="GridCell.Tab.0.center" timestamp="1606193224724">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="689" y="252" width="621" height="524" key="StructurePopup/0.0.1920.1036@0.0.1920.1036" timestamp="1605851139484" />
-    <state x="556" y="252" key="Vcs.Push.Dialog.v2" timestamp="1605940275038">
+    <state width="1896" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1606193224724" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left" timestamp="1606193224723">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="556" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1605940275038" />
+    <state width="1896" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1606193224723" />
+    <state width="1896" height="263" key="GridCell.Tab.0.right" timestamp="1606193224725">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1896" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1606193224725" />
+    <state x="689" y="252" width="621" height="524" key="StructurePopup" timestamp="1606242143093">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="689" y="252" width="621" height="524" key="StructurePopup/0.0.1920.1036@0.0.1920.1036" timestamp="1606242143093" />
+    <state x="556" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606019540129">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="556" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1606019540129" />
+    <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606239797294">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="732" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1036@0.0.1920.1036" timestamp="1606239797294" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1606104175015">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1606104175015" />
   </component>
 </project>
