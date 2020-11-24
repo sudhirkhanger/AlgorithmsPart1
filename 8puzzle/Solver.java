@@ -1,65 +1,81 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.MinPQ;
+import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Comparator;
 
 public class Solver {
 
-    private final MinPQ<Board> boardMinPQ;
-    private final MinPQ<Board> twinMinPQ;
-    private int move = 0;
+    private final SearchNode last;
 
     // find a solution to the initial board (using the A* algorithm)
     public Solver(Board initial) {
         if (initial == null) throw new IllegalArgumentException("board is null");
-        boardMinPQ = new MinPQ<>(new BoardComparator());
-        boardMinPQ.insert(initial);
-        twinMinPQ = new MinPQ<>(new BoardComparator());
-        twinMinPQ.insert(initial.twin());
+
+        final MinPQ<SearchNode> searchNodes = new MinPQ<>(new SearchNodeComparator());
+        searchNodes.insert(new SearchNode(initial, 0, null));
+
+        final MinPQ<SearchNode> twinSearchNodes = new MinPQ<>(new SearchNodeComparator());
+        twinSearchNodes.insert(new SearchNode(initial.twin(), 0, null));
+
+        while (true) {
+            final SearchNode dequedNode = searchNodes.delMin();
+            dequedNode.board.neighbors().forEach(board -> {
+                if (dequedNode.previous == null) {
+                    searchNodes.insert(new SearchNode(board, dequedNode.move + 1, dequedNode));
+                }
+                else if (!board.equals(dequedNode.previous.board)) {
+                    searchNodes.insert(new SearchNode(board, dequedNode.move + 1, dequedNode));
+                }
+            });
+            final SearchNode dequedTwin = twinSearchNodes.delMin();
+            dequedTwin.board.neighbors().forEach(board -> {
+                if (dequedTwin.previous == null) {
+                    twinSearchNodes.insert(new SearchNode(board, dequedTwin.move + 1, dequedTwin));
+                }
+                else if (!board.equals(dequedTwin.previous.board)) {
+                    twinSearchNodes.insert(new SearchNode(board, dequedTwin.move + 1, dequedTwin));
+                }
+            });
+            if (dequedNode.board.isGoal()) {
+                last = dequedNode;
+                break;
+            }
+            if (dequedTwin.board.isGoal()) {
+                last = null;
+                break;
+            }
+        }
     }
 
     // is the initial board solvable? (see below)
     public boolean isSolvable() {
-        Board dequedBoard;
-        Board dequedTwin;
-        while (true) {
-            dequedBoard = boardMinPQ.delMin();
-            Board finalDequedBoard = dequedBoard;
-            dequedBoard.neighbors().forEach(board -> {
-                if (!board.equals(finalDequedBoard)) {
-                    boardMinPQ.insert(board);
-                    move++;
-                }
-            });
-            dequedTwin = twinMinPQ.delMin();
-            Board finalDequedTwin = dequedTwin;
-            dequedTwin.neighbors().forEach(board -> {
-                if (!board.equals(finalDequedTwin)) twinMinPQ.insert(board);
-            });
-            if (dequedBoard.isGoal()) return true;
-            if (dequedTwin.isGoal()) return false;
-        }
+        return last != null;
     }
 
     // min number of moves to solve initial board; -1 if unsolvable
     public int moves() {
-        if (isSolvable()) {
-            return move;
-        }
-        else {
+        if (isSolvable())
+            return last.move;
+        else
             return -1;
-        }
+
     }
 
     // sequence of boards in a shortest solution; null if unsolvable
     public Iterable<Board> solution() {
-        if (isSolvable()) {
-            return boardMinPQ;
+        if (last == null) return null;
+        final Stack<Board> stack = new Stack<>();
+        SearchNode game = last;
+        stack.push(game.board);
+
+        while (game.previous != null) {
+
+            stack.push(game.previous.board);
+            game = game.previous;
         }
-        else {
-            return null;
-        }
+        return stack;
     }
 
     // test client (see below)
@@ -72,6 +88,8 @@ public class Solver {
             for (int j = 0; j < n; j++)
                 tiles[i][j] = in.readInt();
         Board initial = new Board(tiles);
+
+        StdOut.println(initial.toString());
 
         // solve the puzzle
         Solver solver = new Solver(initial);
@@ -86,15 +104,27 @@ public class Solver {
         }
     }
 
-    private class BoardComparator implements Comparator<Board> {
-
-        public int compare(Board board1, Board board2) {
-            if (board1 == null || board2 == null) throw new NullPointerException();
-            int priority1 = board1.manhattan() + move;
-            int priority2 = board2.manhattan() + move;
+    private class SearchNodeComparator implements Comparator<SearchNode> {
+        public int compare(SearchNode t1, SearchNode t2) {
+            int priority1 = t1.manhattan + t1.move;
+            int priority2 = t2.manhattan + t2.move;
             if (priority1 > priority2) return +1;
             if (priority1 < priority2) return -1;
             return 0;
+        }
+    }
+
+    private class SearchNode {
+        private final Board board;
+        private final int move;
+        private final int manhattan;
+        private final SearchNode previous;
+
+        public SearchNode(Board board, int move, SearchNode previous) {
+            this.board = board;
+            this.move = move;
+            manhattan = board.manhattan();
+            this.previous = previous;
         }
     }
 }
