@@ -1,7 +1,6 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
 
 public class Board {
 
@@ -53,11 +52,13 @@ public class Board {
         int manhattan = 0;
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++) {
-                if (tiles[i][j] != 0) {
-                    int row = getRow(tiles[i][j]);
-                    int col = getCol(tiles[i][j]);
+                int tile = tiles[i][j];
+                if (tile != 0) {
+                    int row = getRow(tile);
+                    int col = getCol(tile);
                     if (!(i == row && j == col)) manhattan +=
                             toPositive(i - row) + toPositive(j - col);
+
                 }
             }
         return manhattan;
@@ -93,7 +94,6 @@ public class Board {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (tiles[i][j] == 0) {
-                    // pos = new Pair(i, j);
                     row = i;
                     col = j;
                 }
@@ -157,9 +157,9 @@ public class Board {
                 q.enqueue(exch(row, col, row, col + 1, BLANK_TILE));
                 return true;
             }
-            if (row == n - 1) {
+            if (col == n - 1) {
                 q.enqueue(exch(row, col, row - 1, col, BLANK_TILE));
-                q.enqueue(exch(row, col, row + 2, col, BLANK_TILE));
+                q.enqueue(exch(row, col, row + 1, col, BLANK_TILE));
                 q.enqueue(exch(row, col, row, col - 1, BLANK_TILE));
                 return true;
             }
@@ -169,7 +169,7 @@ public class Board {
 
     private void neighborCenter(Queue<Board> q, int row, int col) {
         q.enqueue(exch(row, col, row, col - 1, BLANK_TILE));
-        q.enqueue(exch(row, col, row, col + 2, BLANK_TILE));
+        q.enqueue(exch(row, col, row, col + 1, BLANK_TILE));
         q.enqueue(exch(row, col, row - 1, col, BLANK_TILE));
         q.enqueue(exch(row, col, row + 1, col, BLANK_TILE));
     }
@@ -179,21 +179,25 @@ public class Board {
         int firstTileRow = 0;
         int firstTileCol = 0;
         int secondTileRow = 0;
-        int secondTileCol = 0;
+        int secondTileCol = 1;
 
-        int firstTile = 0;
-        int secondTile = 0;
-        while (firstTile == secondTile) {
-            while (firstTile == 0) {
-                firstTileRow = StdRandom.uniform(n);
-                firstTileCol = StdRandom.uniform(n);
-                firstTile = tiles[firstTileRow][firstTileCol];
+        if (n == 2) {
+            if (tiles[firstTileRow][firstTileCol] == 0) {
+                firstTileCol = 1;
+                secondTileRow = secondTileRow + 1;
             }
-
-            while (secondTile == 0) {
-                secondTileRow = StdRandom.uniform(n);
-                secondTileCol = StdRandom.uniform(n);
-                secondTile = tiles[secondTileRow][secondTileRow];
+            if (tiles[secondTileRow][secondTileCol] == 0) {
+                secondTileRow = secondTileRow + 1;
+                secondTileCol = secondTileCol - 1;
+            }
+        }
+        else {
+            if (tiles[firstTileRow][firstTileCol] == 0) {
+                firstTileCol = firstTileCol + 1;
+                secondTileCol = secondTileCol + 1;
+            }
+            if (tiles[secondTileRow][secondTileCol] == 0) {
+                secondTileCol = secondTileCol + 1;
             }
         }
 
@@ -240,7 +244,9 @@ public class Board {
 
         StdOut.println("equals " + initial.equals(testBoard));
 
-        StdOut.println("Twin\n" + initial.twin().toString());
+        StdOut.println("Twin---\n" + initial.twin().toString());
+
+        StdOut.println("Neighbours---");
 
         for (Board board : initial.neighbors()) {
             StdOut.println(board.toString());
@@ -248,16 +254,18 @@ public class Board {
     }
 
     private int getRow(int tile) {
-        int row = tile / n;
-        if (row % n == 0) row -= 1;
-        return row;
+        if (tile % n == 0)
+            return tile / n - 1;
+        else
+            return tile / n;
     }
 
     private int getCol(int tile) {
         int mod = tile % n;
-        int col = toPositive(mod - 1);
-        if (mod == 0) col = n - 1;
-        return col;
+        if (mod == 0)
+            return n - 1;
+        else
+            return toPositive(mod - 1);
     }
 
     private int toPositive(int given) {
