@@ -1,5 +1,6 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Point2D;
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.RectHV;
 import edu.princeton.cs.algs4.StdDraw;
 
@@ -135,11 +136,18 @@ public class KdTree {
     // all points that are inside the rectangle (or on the boundary)
     public Iterable<Point2D> range(RectHV rect) {
         if (rect == null) throw new IllegalArgumentException("rect is null");
-        return null;
+        Queue<Point2D> points = new Queue<>();
+        range(root, rect, points);
+        return points;
     }
 
-    private void range(Node node, RectHV rect) {
-
+    private void range(Node node, RectHV rect, Queue<Point2D> points) {
+        if (node == null) return;
+        if (rect.contains(node.p)) points.enqueue(node.p);
+        if (node.rect.intersects(rect)) {
+            range(node.lb, rect, points);
+            range(node.rt, rect, points);
+        }
     }
 
     // a nearest neighbor in the set to point p; null if the set is empty
