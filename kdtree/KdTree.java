@@ -1,7 +1,7 @@
+import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.RectHV;
 import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdOut;
 
 public class KdTree {
 
@@ -80,7 +80,7 @@ public class KdTree {
                     return new RectHV(
                             x.rect.xmin(),
                             x.rect.ymin(),
-                            x.rect.xmin(),
+                            x.rect.xmax(),
                             x.p.y());
             }
         }
@@ -134,7 +134,12 @@ public class KdTree {
 
     // all points that are inside the rectangle (or on the boundary)
     public Iterable<Point2D> range(RectHV rect) {
+        if (rect == null) throw new IllegalArgumentException("rect is null");
         return null;
+    }
+
+    private void range(Node node, RectHV rect) {
+
     }
 
     // a nearest neighbor in the set to point p; null if the set is empty
@@ -146,23 +151,21 @@ public class KdTree {
     public static void main(String[] args) {
         KdTree kdTree = new KdTree();
 
-        StdOut.println("size " + kdTree.size());
-        StdOut.println("isEmpty " + kdTree.isEmpty());
+        /*StdOut.println("size " + kdTree.size());
+        StdOut.println("isEmpty " + kdTree.isEmpty());*/
 
-        Point2D p1 = new Point2D(0.7, 0.2);
-        Point2D p2 = new Point2D(0.5, 0.4);
-        Point2D p3 = new Point2D(0.2, 0.3);
-        Point2D p4 = new Point2D(0.4, 0.7);
-        Point2D p5 = new Point2D(0.9, 0.6);
+        String filename = args[0];
+        In in = new In(filename);
+        while (!in.isEmpty()) {
+            double x = in.readDouble();
+            double y = in.readDouble();
+            Point2D p = new Point2D(x, y);
+            kdTree.insert(p);
+            kdTree.draw();
+        }
 
-        kdTree.insert(p1);
-        kdTree.insert(p2);
-        kdTree.insert(p3);
-        kdTree.insert(p4);
-        kdTree.insert(p5);
-
-        StdOut.println("size " + kdTree.size());
-        StdOut.println("isEmpty " + kdTree.isEmpty());
+        /*StdOut.println("size " + kdTree.size());
+        StdOut.println("isEmpty " + kdTree.isEmpty());*/
 
         kdTree.draw();
     }
