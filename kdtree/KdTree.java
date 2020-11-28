@@ -152,15 +152,37 @@ public class KdTree {
 
     // a nearest neighbor in the set to point p; null if the set is empty
     public Point2D nearest(Point2D p) {
-        return null;
+        if (p == null) throw new IllegalArgumentException("p is null");
+        return nearest(root, p, null);
+    }
+
+    private Point2D nearest(Node x, Point2D p, Point2D nearest) {
+        if (x == null) return nearest;
+        if (nearest == null)
+            nearest = x.p;
+        else if (p.distanceSquaredTo(x.p) < p.distanceSquaredTo(nearest))
+            nearest = x.p;
+        if (x.isVertical) {
+            if (p.x() < x.p.x()) {
+                return nearest(x.lb, p, nearest);
+            } else if (p.distanceSquaredTo(nearest) > p
+                    .distanceSquaredTo(new Point2D(x.p.x(), p.y()))) {
+                return nearest(x.rt, p, nearest);
+            }
+        } else {
+            if (p.y() < x.p.y()) {
+                return nearest(x.lb, p, nearest);
+            } else if (p.distanceSquaredTo(nearest) > p
+                    .distanceSquaredTo(new Point2D(p.x(), x.p.y()))) {
+                return nearest(x.rt, p, nearest);
+            }
+        }
+        return nearest;
     }
 
     // unit testing of the methods (optional)
     public static void main(String[] args) {
         KdTree kdTree = new KdTree();
-
-        /*StdOut.println("size " + kdTree.size());
-        StdOut.println("isEmpty " + kdTree.isEmpty());*/
 
         String filename = args[0];
         In in = new In(filename);
@@ -172,19 +194,19 @@ public class KdTree {
             kdTree.draw();
         }
 
-        /*StdOut.println("size " + kdTree.size());
-        StdOut.println("isEmpty " + kdTree.isEmpty());*/
-
         kdTree.draw();
+
+        Point2D p = kdTree.nearest(new Point2D(0.81, 0.30));
+        StdDraw.line(p.x(), p.y(), 0.81, 0.30);
     }
 
     private static class Node {
-        private Point2D p;
-        private RectHV rect;
+        private final Point2D p;
+        private final RectHV rect;
         private Node lb;
         private Node rt;
         private int size;
-        private boolean isVertical;
+        private final boolean isVertical;
 
         public Node(Point2D p, RectHV rect, int size, boolean isVertical) {
             this.p = p;
