@@ -28,11 +28,13 @@ public class PointSET {
 
     // add the point to the set (if it is not already in the set)
     public void insert(Point2D p) {
+        if (p == null) throw new IllegalArgumentException("p is null");
         point2DSET.add(p);
     }
 
     // does the set contain point p?
     public boolean contains(Point2D p) {
+        if (p == null) throw new IllegalArgumentException("p is null");
         return point2DSET.contains(p);
     }
 
@@ -43,6 +45,7 @@ public class PointSET {
 
     // all points that are inside the rectangle (or on the boundary)
     public Iterable<Point2D> range(RectHV rect) {
+        if (rect == null) throw new IllegalArgumentException("rect is null");
         Queue<Point2D> point2DQueue = new Queue<>();
         point2DSET.forEach(point2D -> {
             if (rect.contains(point2D)) {
@@ -54,6 +57,7 @@ public class PointSET {
 
     // a nearest neighbor in the set to point p; null if the set is empty
     public Point2D nearest(Point2D p) {
+        if (p == null) throw new IllegalArgumentException("p is null");
         Point2D nearest = null;
 
         for (Point2D point2D : point2DSET) {
@@ -105,6 +109,7 @@ public class PointSET {
 
         // Test draw
         StdDraw.setPenRadius(0.01);
+        StdDraw.setPenColor(StdDraw.BLUE);
         brute.draw();
         StdDraw.setPenRadius(0.002);
         StdDraw.setPenColor(StdDraw.MAGENTA);
