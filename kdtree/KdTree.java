@@ -3,6 +3,7 @@ import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.RectHV;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
 
 public class KdTree {
 
@@ -41,14 +42,16 @@ public class KdTree {
             if (cmp < 0) {
                 node.lb = insert(node, node.lb, p, "left", false);
             } else {
-                node.rt = insert(node, node.rt, p, "right", false);
+                if (!(cmp == 0 && p.y() == node.p.y()))
+                    node.rt = insert(node, node.rt, p, "right", false);
             }
         } else {
             cmp = p.y() - node.p.y();
             if (cmp < 0) {
                 node.lb = insert(node, node.lb, p, "bottom", true);
             } else {
-                node.rt = insert(node, node.rt, p, "top", true);
+                if (!(cmp == 0 && p.x() == node.p.x()))
+                    node.rt = insert(node, node.rt, p, "top", true);
             }
         }
 
@@ -101,14 +104,22 @@ public class KdTree {
     private boolean get(Node node, Point2D p) {
         if (p == null) throw new IllegalArgumentException("p is null");
         if (node == null) return false;
+
         double cmp;
         if (node.isVertical)
-            cmp = p.x() - root.p.x();
+            cmp = p.x() - node.p.x();
         else
-            cmp = p.y() - root.p.y();
-        if (cmp < 0) return get(node.lb, p);
-        else if (cmp > 0) return get(node.rt, p);
-        else return node.p.equals(p);
+            cmp = p.y() - node.p.y();
+
+        if (cmp < 0) {
+            return get(node.lb, p);
+        } else {
+            if (cmp == 0) {
+                if ((node.isVertical && p.y() == node.p.y()) ||
+                        (!node.isVertical && p.x() == node.p.x())) return true;
+            }
+            return get(node.rt, p);
+        }
     }
 
     // draw all points to standard draw
@@ -119,9 +130,7 @@ public class KdTree {
     private void draw(Node x) {
         if (x == null) return;
         StdDraw.setPenColor(StdDraw.BLACK);
-        StdDraw.setPenRadius(0.02);
         StdDraw.point(x.p.x(), x.p.y());
-        StdDraw.setPenRadius(0.005);
         if (x.isVertical) {
             StdDraw.setPenColor(StdDraw.RED);
             StdDraw.line(x.p.x(), x.rect.ymin(), x.p.x(), x.rect.ymax());
@@ -157,16 +166,19 @@ public class KdTree {
     }
 
     private Point2D nearest(Node x, Point2D p, Point2D nearest) {
+
         if (x == null) return nearest;
+
         if (nearest == null)
             nearest = x.p;
         else if (p.distanceSquaredTo(x.p) < p.distanceSquaredTo(nearest))
             nearest = x.p;
+
         if (x.isVertical) {
             if (p.x() < x.p.x()) {
                 return nearest(x.lb, p, nearest);
-            } else if (p.distanceSquaredTo(nearest) > p
-                    .distanceSquaredTo(new Point2D(x.p.x(), p.y()))) {
+            } else if (p.distanceSquaredTo(nearest) >
+                    p.distanceSquaredTo(new Point2D(x.p.x(), p.y()))) {
                 return nearest(x.rt, p, nearest);
             }
         } else {
@@ -177,12 +189,21 @@ public class KdTree {
                 return nearest(x.rt, p, nearest);
             }
         }
+
+        if (x.isVertical) {
+            if (p.distanceSquaredTo(nearest) > p.distanceSquaredTo(
+                    new Point2D(p.x(), x.rect.ymin()))) {
+                return nearest(x.lb, p, nearest);
+            }
+        }
         return nearest;
     }
 
     // unit testing of the methods (optional)
     public static void main(String[] args) {
         KdTree kdTree = new KdTree();
+
+        StdOut.println("Size " + kdTree.size() + " isEmpty " + kdTree.isEmpty());
 
         String filename = args[0];
         In in = new In(filename);
@@ -191,13 +212,28 @@ public class KdTree {
             double y = in.readDouble();
             Point2D p = new Point2D(x, y);
             kdTree.insert(p);
-            kdTree.draw();
         }
+
+        StdOut.println("Size " + kdTree.size() + " isEmpty " + kdTree.isEmpty());
+        StdOut.println("contains " + kdTree.contains(new Point2D(0.5, 0.5)));
+        StdOut.println("contains 1.0, 0.0 " + kdTree.contains(new Point2D(1.0, 0.0)));
 
         kdTree.draw();
 
-        Point2D p = kdTree.nearest(new Point2D(0.81, 0.30));
-        StdDraw.line(p.x(), p.y(), 0.81, 0.30);
+        for (Point2D point2D : kdTree.range(new RectHV(0.25, 0.0, 1.0, 1.0))) {
+            StdOut.println(point2D.toString());
+        }
+
+        Point2D q = new Point2D(0.704, 0.479);
+        StdDraw.textLeft(q.x(), q.y(), " (" + q.x() + ", " + q.y() + ")");
+        Point2D p = kdTree.nearest(q);
+        StdDraw.setPenColor(StdDraw.BLACK);
+        StdDraw.setPenRadius(0.02);
+        StdDraw.point(q.x(), q.y());
+        StdOut.println("near " + p.toString());
+        StdDraw.setPenColor(StdDraw.ORANGE);
+        StdDraw.setPenRadius(0.005);
+        StdDraw.line(p.x(), p.y(), 0.704, 0.479);
     }
 
     private static class Node {
